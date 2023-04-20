@@ -1,116 +1,167 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Contact form</title>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <title>Online Feedback Form</title>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600' rel='stylesheet' type='text/css'>
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
     <style>
       html, body {
       min-height: 100%;
+      }
+      body, div, form, input, p { 
       padding: 0;
       margin: 0;
+      outline: none;
       font-family: Roboto, Arial, sans-serif;
       font-size: 14px;
       color: #666;
+      line-height: 22px;
       }
       h1 {
-      margin: 0 0 20px;
       font-weight: 400;
-      color: #1c87c9;
       }
-      p {
-      margin: 0 0 5px;
+      h4 {
+      margin: 22px 0 4px;
+      color: #095484;
       }
-      .main-block {
+      .testbox {
       display: flex;
-      flex-direction: column;
       justify-content: center;
       align-items: center;
-      min-height: 100vh;
-      background: #1c87c9;
+      height: inherit;
+      padding: 3px;
       }
       form {
-      padding: 25px;
-      margin: 25px;
-      box-shadow: 0 2px 5px #f5f5f5; 
-      background: #f5f5f5; 
+      width: 100%;
+      padding: 20px;
+      background: #fff;
+      box-shadow: 0 2px 5px #ccc; 
       }
-      .fas {
-      margin: 25px 10px 0;
-      font-size: 72px;
-      color: #fff;
+      input {
+      width: calc(100% - 10px);
+      padding: 5px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      vertical-align: middle;
       }
-      .fa-envelope {
-      transform: rotate(-20deg);
-      }
-      .fa-at , .fa-mail-bulk{
-      transform: rotate(10deg);
-      }
-      input, textarea {
-      width: calc(100% - 18px);
-      padding: 8px;
-      margin-bottom: 20px;
-      border: 1px solid #1c87c9;
+      input:hover, textarea:hover {
       outline: none;
+      border: 1px solid #095484;
       }
-      input::placeholder {
-      color: #666;
+      .first-name {
+      margin-bottom: 22px;
+      }
+      span {
+      color: red;
+      }
+      th, td {
+      width: 21%;
+      padding: 15px 0;
+      border-bottom: 1px solid #ccc;
+      text-align: center;
+      vertical-align: unset;
+      line-height: 18px;
+      font-weight: 400;
+      word-break: break-all;
+      }
+      .first-col {
+      width: 16%;
+      text-align: left;
+      }
+      table {
+      width: 100%;
+      }
+      textarea {
+      width: calc(100% - 6px);
+      }
+      .btn-block {
+      margin-top: 20px;
+      text-align: center;
       }
       button {
-      width: 100%;
+      width: 150px;
       padding: 10px;
       border: none;
-      background: #1c87c9; 
+      -webkit-border-radius: 5px; 
+      -moz-border-radius: 5px; 
+      border-radius: 5px; 
+      background-color: #095484;
       font-size: 16px;
-      font-weight: 400;
       color: #fff;
+      cursor: pointer;
       }
       button:hover {
-      background: #2371a0;
-      }    
+      background-color: #0666a3;
+      }
       @media (min-width: 568px) {
-      .main-block {
-      flex-direction: row;
-      }
-      .left-part, form {
-      width: 50%;
-      }
-      .fa-envelope {
-      margin-top: 0;
-      margin-left: 20%;
-      }
-      .fa-at {
-      margin-top: -10%;
-      margin-left: 65%;
-      }
-      .fa-mail-bulk {
-      margin-top: 2%;
-      margin-left: 28%;
+      th, td {
+      word-break: keep-all;
       }
       }
     </style>
   </head>
   <body>
-    <div class="main-block">
-      <div class="left-part">
-        <i class="fas fa-envelope"></i>
-        <i class="fas fa-at"></i>
-        <i class="fas fa-mail-bulk"></i>
-      </div>
+    <div class="testbox">
       <form action="/">
-        <h1>Contact Us</h1>
-        <div class="info">
-          <input class="fname" type="text" name="name" placeholder="Full name">
-          <input type="text" name="name" placeholder="Email">
-          <input type="text" name="name" placeholder="Phone number">
-          <input type="text" name="name" placeholder="Website">
+        <h1>Online Feedback Form</h1>
+        <p>Thank you for taking the time to fill in our online feedback form. By providing us your feedback, you are helping us understand what we do well and what improvements we need to implement.</p>
+        <h4>Name</h4>
+        <input class="first-name" type="text" name="name" placeholder="First" />
+        <input type="text" name="name" placeholder="Last" />
+        <h4>Email<span>*</span></h4>
+        <input type="text"/>
+        <h4>How satisfied were you with:<span>*</span></h4>
+        <table>
+          <tr>
+            <th class="first-col"></th>
+            <th>Very Satisfied</th>
+            <th>Satisfied</th>
+            <th>Unsatisfied</th>
+            <th>Very Unsatisfied</th>
+          </tr>
+          <tr>
+            <td class="first-col">Key point #1</td>
+            <td><input type="radio" value="none" name="point#1" /></td>
+            <td><input type="radio" value="none" name="point#1” /></td>
+            <td><input type="radio" value="none" name="point#1" /></td>
+            <td><input type="radio" value="none" name="point#1" /></td>
+          </tr>
+          <tr>
+            <td class="first-col">Key point #2</td>
+            <td><input type="radio" value="none" name="point#2" /></td>
+            <td><input type="radio" value="none" name="point#2" /></td>
+            <td><input type="radio" value="none" name="point#2" /></td>
+            <td><input type="radio" value="none" name="point#2" /></td>
+          </tr>
+          <tr>
+            <td class="first-col">Key point #3</td>
+            <td><input type="radio" value="none" name="point#3" /></td>
+            <td><input type="radio" value="none" name="point#3" /></td>
+            <td><input type="radio" value="none" name="point#3" /></td>
+            <td><input type="radio" value="none" name="point#3" /></td>
+          </tr>
+          <tr>
+            <td class="first-col">Key point #4</td>
+            <td><input type="radio" value="none" name="point#4" /></td>
+            <td><input type="radio" value="none" name="point#4" /></td>
+            <td><input type="radio" value="none" name="point#4" /></td>
+            <td><input type="radio" value="none" name="point#4" /></td>
+          </tr>
+          <tr>
+            <td class="first-col">Key point #5</td>
+            <td><input type="radio" value="none" name="point#5" /></td>
+            <td><input type="radio" value="none" name="point#5" /></td>
+            <td><input type="radio" value="none" name="point#5" /></td>
+            <td><input type="radio" value="none" name="point#5" /></td>
+          </tr>
+        </table>
+        <h4>Feel free to add any other comments or suggestions:</h4>
+        <textarea rows="5"></textarea>
+        <small>* The information given within the Feedback Form will be used for service improvement only and are strictly confidential.</small>
+        <div class="btn-block">
+          <button type="submit" href="/">Send Feedback</button>
         </div>
-        <p>Message</p>
-        <div>
-          <textarea rows="4"></textarea>
-        </div>
-        <button type="submit" href="/">Submit</button>
       </form>
     </div>
   </body>
-</html>
+</html>>
