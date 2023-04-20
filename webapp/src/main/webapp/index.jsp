@@ -1,167 +1,115 @@
-
-
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Simple registration form</title>
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <title>Contact form</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
     <style>
       html, body {
-      display: flex;
-      justify-content: center;
-      height: 100%;
-      }
-      body, div, h1, form, input, p { 
+      min-height: 100%;
       padding: 0;
       margin: 0;
-      outline: none;
       font-family: Roboto, Arial, sans-serif;
-      font-size: 16px;
+      font-size: 14px;
       color: #666;
       }
       h1 {
-      padding: 10px 0;
-      font-size: 32px;
-      font-weight: 300;
-      text-align: center;
+      margin: 0 0 20px;
+      font-weight: 400;
+      color: #1c87c9;
       }
       p {
-      font-size: 12px;
-      }
-      hr {
-      color: #a9a9a9;
-      opacity: 0.3;
+      margin: 0 0 5px;
       }
       .main-block {
-      max-width: 340px; 
-      min-height: 460px; 
-      padding: 10px 0;
-      margin: auto;
-      border-radius: 5px; 
-      border: solid 1px #ccc;
-      box-shadow: 1px 2px 5px rgba(0,0,0,.31); 
-      background: #ebebeb; 
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: #1c87c9;
       }
       form {
-      margin: 0 30px;
+      padding: 25px;
+      margin: 25px;
+      box-shadow: 0 2px 5px #f5f5f5; 
+      background: #f5f5f5; 
       }
-      .account-type, .gender {
-      margin: 15px 0;
-      }
-      input[type=radio] {
-      display: none;
-      }
-      label#icon {
-      margin: 0;
-      border-radius: 5px 0 0 5px;
-      }
-      label.radio {
-      position: relative;
-      display: inline-block;
-      padding-top: 4px;
-      margin-right: 20px;
-      text-indent: 30px;
-      overflow: visible;
-      cursor: pointer;
-      }
-      label.radio:before {
-      content: "";
-      position: absolute;
-      top: 2px;
-      left: 0;
-      width: 20px;
-      height: 20px;
-      border-radius: 50%;
-      background: #1c87c9;
-      }
-      label.radio:after {
-      content: "";
-      position: absolute;
-      width: 9px;
-      height: 4px;
-      top: 8px;
-      left: 4px;
-      border: 3px solid #fff;
-      border-top: none;
-      border-right: none;
-      transform: rotate(-45deg);
-      opacity: 0;
-      }
-      input[type=radio]:checked + label:after {
-      opacity: 1;
-      }
-      input[type=text], input[type=password] {
-      width: calc(100% - 57px);
-      height: 36px;
-      margin: 13px 0 0 -5px;
-      padding-left: 10px; 
-      border-radius: 0 5px 5px 0;
-      border: solid 1px #cbc9c9; 
-      box-shadow: 1px 2px 5px rgba(0,0,0,.09); 
-      background: #fff; 
-      }
-      input[type=password] {
-      margin-bottom: 15px;
-      }
-      #icon {
-      display: inline-block;
-      padding: 9.3px 15px;
-      box-shadow: 1px 2px 5px rgba(0,0,0,.09); 
-      background: #1c87c9;
+      .fas {
+      margin: 25px 10px 0;
+      font-size: 72px;
       color: #fff;
-      text-align: center;
       }
-      .btn-block {
-      margin-top: 10px;
-      text-align: center;
+      .fa-envelope {
+      transform: rotate(-20deg);
+      }
+      .fa-at , .fa-mail-bulk{
+      transform: rotate(10deg);
+      }
+      input, textarea {
+      width: calc(100% - 18px);
+      padding: 8px;
+      margin-bottom: 20px;
+      border: 1px solid #1c87c9;
+      outline: none;
+      }
+      input::placeholder {
+      color: #666;
       }
       button {
       width: 100%;
-      padding: 10px 0;
-      margin: 10px auto;
-      border-radius: 5px; 
+      padding: 10px;
       border: none;
       background: #1c87c9; 
-      font-size: 14px;
-      font-weight: 600;
+      font-size: 16px;
+      font-weight: 400;
       color: #fff;
       }
       button:hover {
-      background: #26a9e0;
+      background: #2371a0;
+      }    
+      @media (min-width: 568px) {
+      .main-block {
+      flex-direction: row;
+      }
+      .left-part, form {
+      width: 50%;
+      }
+      .fa-envelope {
+      margin-top: 0;
+      margin-left: 20%;
+      }
+      .fa-at {
+      margin-top: -10%;
+      margin-left: 65%;
+      }
+      .fa-mail-bulk {
+      margin-top: 2%;
+      margin-left: 28%;
+      }
       }
     </style>
   </head>
   <body>
     <div class="main-block">
-      <h1>Registration</h1>
+      <div class="left-part">
+        <i class="fas fa-envelope"></i>
+        <i class="fas fa-at"></i>
+        <i class="fas fa-mail-bulk"></i>
+      </div>
       <form action="/">
-        <hr>
-        <div class="account-type">
-          <input type="radio" value="none" id="radioOne" name="account" checked/>
-          <label for="radioOne" class="radio">Personal</label>
-          <input type="radio" value="none" id="radioTwo" name="account" />
-          <label for="radioTwo" class="radio">Company</label>
+        <h1>Contact Us</h1>
+        <div class="info">
+          <input class="fname" type="text" name="name" placeholder="Full name">
+          <input type="text" name="name" placeholder="Email">
+          <input type="text" name="name" placeholder="Phone number">
+          <input type="text" name="name" placeholder="Website">
         </div>
-        <hr>
-        <label id="icon" for="name"><i class="fas fa-envelope"></i></label>
-        <input type="text" name="name" id="name" placeholder="Email" required/>
-        <label id="icon" for="name"><i class="fas fa-user"></i></label>
-        <input type="text" name="name" id="name" placeholder="Name" required/>
-        <label id="icon" for="name"><i class="fas fa-unlock-alt"></i></label>
-        <input type="password" name="name" id="name" placeholder="Password" required/>
-        <hr>
-        <div class="gender">
-          <input type="radio" value="none" id="male" name="gender" checked/>
-          <label for="male" class="radio">Male</label>
-          <input type="radio" value="none" id="female" name="gender" />
-          <label for="female" class="radio">Female</label>
+        <p>Message</p>
+        <div>
+          <textarea rows="4"></textarea>
         </div>
-        <hr>
-        <div class="btn-block">
-          <p>By clicking Register, you agree on our <a href="https://www.w3docs.com/privacy-policy">Privacy Policy for W3Docs</a>.</p>
-          <button type="submit" href="/">Submit</button>
-        </div>
+        <button type="submit" href="/">Submit</button>
       </form>
     </div>
   </body>
