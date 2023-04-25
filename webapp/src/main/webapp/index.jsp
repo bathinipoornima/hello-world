@@ -1,30 +1,11 @@
 <!DOCTYPE html>
-<html>
-<head>
-<h1> Company Registration Form</h1>
-</head>
-<body>
-<form>
-	<table>
-		<tr>
-			<td>
-				Email Address:
-			</td>
-
-			<td>
-				<input type=”mail”  placeholder=”Email” name=””>
-			</td>
-		</tr>
-<tr>
-<td>
-				Password:
-			</td>
-
-			<td>
-				<input type=”Password” placeholder=”Password” name=””>
-			</td>
-		</tr>
-	</table>
-</form> 
-</body>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register</title> <!--Change the text to "Register"-->
+  </head>
+  <body></body>
 </html>
+
